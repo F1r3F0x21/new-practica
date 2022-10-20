@@ -21,6 +21,23 @@ public class Board {
 		return this.colors[coordinate.getRow()][coordinate.getColumn()];
 	}
 
+	void putToken(Coordinate coordinate, Color color){
+		assert !(coordinate == null);
+
+		this.colors[coordinate.getRow()][coordinate.getColumn()] = color;
+	}
+	boolean isOcuppied (Coordinate coordinate, Color color){
+		return this.getColor(coordinate) == color;
+	}
+
+	boolean isEmpty (Coordinate coordinate){
+		return this.isOcuppied(coordinate, Color.NULL);
+	}
+
+	boolean checkPos(Color color){
+		
+		while()
+	}
 
 
     void write() {
