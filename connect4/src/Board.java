@@ -17,10 +17,13 @@ public class Board {
     }
 
     private Color getColor(Coordinate coordinate) {
-		//HAY QUE VER SI ES NULL
+		assert this.colors[coordinate.getRow()][coordinate.getColumn()] != Color.NULL;
 		return this.colors[coordinate.getRow()][coordinate.getColumn()];
 	}
 
+	boolean isEmpty (Coordinate coordinate){
+		return this.getColor(coordinate) == Color.NULL;
+	}
 
 
     void write() {
