@@ -1,7 +1,7 @@
 
 enum Color {
-    X,
-    O,
+    R,
+    Y,
     NULL;
 
     static Color get (int ordinal){
