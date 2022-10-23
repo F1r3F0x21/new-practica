@@ -21,10 +21,6 @@ public class Board {
 		return this.colors[coordinate.getRow()][coordinate.getColumn()];
 	}
 
-<<<<<<< HEAD
-	boolean isEmpty (Coordinate coordinate){
-		return this.getColor(coordinate) == Color.NULL;
-=======
 	void putToken(Coordinate coordinate, Color color){
 		assert !(coordinate == null);
 
@@ -37,12 +33,16 @@ public class Board {
 	boolean isEmpty (Coordinate coordinate){
 		return this.isOcuppied(coordinate, Color.NULL);
 	}
+	
 
-	boolean checkPos(Color color){
-		
-		while()
->>>>>>> 892a3f15232c839b640b97c3cc0770853c992f57
+ 	boolean checkPos(Color color){
+		if (color.isNull()){
+			
+		}
+
 	}
+
+
 
 
     void write() {
