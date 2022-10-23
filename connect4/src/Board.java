@@ -33,11 +33,16 @@ public class Board {
 	boolean isEmpty (Coordinate coordinate){
 		return this.isOcuppied(coordinate, Color.NULL);
 	}
+	
 
-	boolean checkPos(Color color){
-		
-		while()
+ 	boolean checkPos(Color color){
+		if (color.isNull()){
+			
+		}
+
 	}
+
+
 
 
     void write() {
