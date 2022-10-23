@@ -16,6 +16,36 @@ import java.util.List;
         this.board = board;
         this.putTokens = 0;
     }
+    void putToken() {
+         Coordinate coordinate;
+         Error error;
+         do {
+             coordinate = this.getCoordinate(Message.ENTER_COORDINATE_TO_PUT);
+             error = this.getPutTokenError(coordinate);
+         } while (!error.isNull());
+         this.board.putToken(coordinate, this.color);
+         this.putTokens++;
+     }
+     private Error getPutTokenError(Coordinate coordinate) {
+         assert coordinate != null;
+
+         Error error = Error.NULL;
+         if (!this.board.isEmpty(coordinate)) {
+             error = Error.NOT_EMPTY;
+         }
+         error.writeln();
+         return error;
+     }
+     Coordinate getCoordinate(Message message){
+         assert message != null;
+
+         Coordinate coordinate = new Coordinate();
+         coordinate.read(message.toString());
+         return coordinate;
+    }
+     void writeWinner() {
+         Message.PLAYER_WIN.writeln(this.color.name());
+     }
 
 
 

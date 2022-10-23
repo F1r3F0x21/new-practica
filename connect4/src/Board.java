@@ -4,11 +4,11 @@ import java.util.List;
 public class Board {
     private Color[][] colors;
 
-    Board(){
-        this.colors = new Color[Coordinate.ROW][Coordinate.COLUMN];
+    public Board(){
+		this.colors = new Color[Coordinate.ROW][Coordinate.COLUMN];
     }
 
-    void reset() {
+    public void reset() {
         for(int i= 0; i < Coordinate.ROW; i++){
             for(int j = 0; j < Coordinate.COLUMN; j++){
                 this.colors[i][j] = Color.NULL;
@@ -21,7 +21,7 @@ public class Board {
 		return this.colors[coordinate.getRow()][coordinate.getColumn()];
 	}
 
-	void putToken(Coordinate coordinate, Color color){
+	public void putToken(Coordinate coordinate, Color color){
 		assert !(coordinate == null);
 
 		this.colors[coordinate.getRow()][coordinate.getColumn()] = color;
@@ -35,17 +35,29 @@ public class Board {
 	}
 	
 
- 	boolean checkPos(Color color){
-		if (color.isNull()){
-			
-		}
+	private int checkPos(int column){
+		int filaComprobacion=0;
+		Coordinate coordinate= new Coordinate(filaComprobacion,column);
 
+		while(!this.isEmpty(coordinate) || filaComprobacion != Coordinate.ROW){
+			filaComprobacion++;
+		}
+		if (filaComprobacion == Coordinate.ROW){
+			return -1;
+		}else{
+			return filaComprobacion
+		}
 	}
 
+	public boolean boardFull(){
+		int columnaComprobacion=0;
+		while (this.checkColumn(columnaComprobacion)==-1){
+			columnaComprobacion++;
+		}
+		return Coordinate.COLUMN==columnaComprobacion;
+	}
 
-
-
-    void write() {
+    public void write() {
 		Message.HORIZONTAL_LINE.writeln();
 		for (int i = 0; i < Coordinate.ROW; i++) {
 			Message.VERTICAL_LINE.write();

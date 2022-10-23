@@ -17,10 +17,7 @@ public class Coordinate {
     public int getColumn(){
         return this.column;
     }
-
-    
-
-}
+    }
 
 
 
