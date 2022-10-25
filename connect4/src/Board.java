@@ -35,7 +35,7 @@ public class Board {
 	}
 	
 
-	private int checkPos(int column){
+	private int checkColumn(int column){
 		int filaComprobacion=0;
 		Coordinate coordinate= new Coordinate(filaComprobacion,column);
 
@@ -45,7 +45,7 @@ public class Board {
 		if (filaComprobacion == Coordinate.ROW){
 			return -1;
 		}else{
-			return filaComprobacion
+			return filaComprobacion;
 		}
 	}
 

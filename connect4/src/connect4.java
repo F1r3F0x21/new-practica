@@ -1,8 +1,8 @@
-public class Connect4 {
+public class connect4 {
     private Board board;
     private Turn turn;
 
-    Connect4(){
+    connect4(){
         this.board = new Board();
         this.turn = new Turn(this.board);
     }
@@ -44,7 +44,7 @@ public class Connect4 {
     }
 
     public static void main(String[] args) {
-        new Connect4().play();
+        new connect4().play();
     }
 
 }

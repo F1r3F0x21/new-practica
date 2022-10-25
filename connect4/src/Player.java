@@ -39,7 +39,7 @@ import java.util.List;
      Coordinate getCoordinate(Message message){
          assert message != null;
 
-         Coordinate coordinate = new Coordinate();
+         Coordinate coordinate;
          coordinate.read(message.toString());
          return coordinate;
     }
